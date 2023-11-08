@@ -1,11 +1,85 @@
-<!-- paste this in your html to us this script -->
+# Recommendation Service
+
+## Overview
+
+This package provides a Recommendation Service for integrating size recommendations into your webshop or application.
+
+## Installation
+
+To use this Recommendation Service, you can install it via npm:
+
+```bash
+npm install recommendation-service
+
+```
+Here's how you can use this Recommendation Service in your webshop or application:
+
+Import the package in your JavaScript/React code:
+
+    import RecommendationService from 'recommendation-service';
+
+
+# Recommendation Service(Options)
+    apikey: Your API key (string).
+    recommendation_link_text: Text for the recommendation link (string).
+    recommendation_button_text: Text for the recommendation button (string).
+    showaslink: Set to true to use a link, or false to use a button (string).
+    data-upc: Your product UPC key (string).
+
+## Obtaining Your API Key
+
+To use the Recommendation Service, you'll need an API key. Here's how you can obtain one:
+
+    1. Visit (https://portal.sizey.ai/) and register your account.
+
+    2. Once you've successfully registered and logged in, navigate to the "Company Information" page.
+
+    3. Select a suitable plan for your company on the Sizey Portal.
+
+    4. After successfully completing the registration and setup, you will have access to your own company account on the portal.
+
+    5. To obtain your API key, go to (https://portal.sizey.ai/my-apikeys) within your Sizey Portal account.
+
+    6. Here, you will find your unique API key. Copy this key and use it when initializing the Recommendation Service in your project.
+
+
+## Obtaining upc-data for Your Products
+
+To use the Recommendation Service, you'll need UPC data for your products. Here's how you can obtain it:
+
+    1. Login to (https://portal.sizey.ai/).
+
+    2. After successfully logging in, navigate to (https://portal.sizey.ai/my-products) within your Sizey Portal account.
+
+    3. Here, you will see a "Create New Product" button in the user interface. Click on it to create a new product.
+
+    4. You will be redirected to (https://portal.sizey.ai/my-products/new) page. Follow the instructions to set up and configure your product.
+
+    5. As you create your product, make sure to add a suitable size chart for it.
+
+    6. After setting up your product, you can create variations for your product. You will find an "Add Variation" button in the user interface. Click on it to add variations.
+
+    7. As you add variations to your product, you will be able to access the UPC values specific to each variation.
+
+    8. The UPC values represent different product variations, and you can use these values as input (upc-data) when using the Recommendation Service in your webshop or application.
+
+
+# Use below code i your html to use this script
  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://raw.githack.com/richarepo/sizey-recommendation-package/ddbf2564c39ac35ceeec86f7a67eccfe1914f06a/bundle.js"></script>
+ <script src="https://raw.githack.com/richarepo/sizey-recommendation-package/master/sizey-recommendation.min.js"></script>
 
 <!-- for using popup you need to discribe syntax like this and give valid value to variables-->
-<span class="SizeyContainer" id="sizey-container"data-productean="{ProductArticleNumber}">
-    <div data-product-variations style="display: none;">
-        <div data-variation-id="{VariationId}" data-variation-ean="{VariationArticleNumber}"></div>
+
+<span className="SizeyContainer" id="sizey-container" 
+    data-upc={1234567890} 
+    apikey='TzQzeGZXOU5CQ0RSS1N4TEhyb1k6bTlDNEttUVM='
+    recommendation_link_text='Test your size'
+    recommendation_button_text='Test My Size'
+    showaslink="false">
+    <div data-product-variations>
+        <div data-variation-id="{VariationId}" 
+            data-variation-ean="{VariationArticleNumber}">    
+        </div>
     </div>
-</span>
+  </span>
 

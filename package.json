@@ -1,6 +1,6 @@
 {
-  "name": "sizey-recommendation",
-  "version": "1.0.0",
+  "name": "recommendation-service",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -9,6 +9,7 @@
   },
   "author": "sizey",
   "license": "ISC",
+  "files": ["index.js", "style.css", "README.md", "sizey-recommendation.min.js", "package.json"],
   "dependencies": {
     "browserify": "^17.0.0"
   }
