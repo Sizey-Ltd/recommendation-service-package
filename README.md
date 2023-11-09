@@ -19,6 +19,50 @@ Import the package in your JavaScript/React code:
     import RecommendationService from 'recommendation-service';
 
 
+# Usage in React Project
+
+    import RecommendationService from 'recommendation-service';
+
+Use this syntax in you APP.js or where you are going to import this package
+```html
+    <span className="SizeyContainer" id="sizey-container" 
+        data-upc={product-upc} 
+        apikey='APIKEY'
+        recommendation_link_text='Test your size'
+        recommendation_button_text='Test My Size'
+        showaslink="false">
+        <div data-product-variations>
+            <div data-variation-id="{VariationId}" 
+                data-variation-ean="{VariationArticleNumber}">    
+            </div>
+        </div>
+    </span>
+```
+
+
+# Usage in HTML Project
+
+To include the Recommendation Service script in your HTML file, use the following code:
+
+```html
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://raw.githack.com/SizeyLtd/recommendation-service-package/adding-recommendation-button/sizey-recommendation.min.js"></script>
+
+<span className="SizeyContainer" id="sizey-container" 
+    data-upc={product-upc} 
+    apikey='APIKEY'
+    recommendation_link_text='Test your size'
+    recommendation_button_text='Test My Size'
+    showaslink="false">
+    <div data-product-variations>
+        <div data-variation-id="{VariationId}" 
+            data-variation-ean="{VariationArticleNumber}">    
+        </div>
+    </div>
+</span>
+```
+
+
 # Recommendation Service(Options)
     apikey: Your API key (string).
     recommendation_link_text: Text for the recommendation link (string).
@@ -64,22 +108,4 @@ To use the Recommendation Service, you'll need UPC data for your products. Here'
     8. The UPC values represent different product variations, and you can use these values as input (upc-data) when using the Recommendation Service in your webshop or application.
 
 
-# Use below code i your html to use this script
- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
- <script src="https://raw.githack.com/richarepo/sizey-recommendation-package/master/sizey-recommendation.min.js"></script>
-
-<!-- for using popup you need to discribe syntax like this and give valid value to variables-->
-
-<span className="SizeyContainer" id="sizey-container" 
-    data-upc={1234567890} 
-    apikey='TzQzeGZXOU5CQ0RSS1N4TEhyb1k6bTlDNEttUVM='
-    recommendation_link_text='Test your size'
-    recommendation_button_text='Test My Size'
-    showaslink="false">
-    <div data-product-variations>
-        <div data-variation-id="{VariationId}" 
-            data-variation-ean="{VariationArticleNumber}">    
-        </div>
-    </div>
-  </span>
 
