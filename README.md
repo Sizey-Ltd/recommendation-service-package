@@ -23,7 +23,7 @@ Import the package in your JavaScript/React code:
 
     import RecommendationService from 'recommendation-service';
 
-Use this syntax in you APP.js or where you are going to import this package
+Use this syntax in you Component or where you are going to import this package
 ```html
     <span className="SizeyContainer" id="sizey-container" 
         data-upc={product-upc} 
