@@ -1,0 +1,103 @@
+:root {
+    --pink: #DF1E85;
+    --white: #FFF;
+    --lightPurple: #962C87;
+    --purple: #5D2F88;
+    --purpleHover: #62477e;
+    --darkGray: #333;
+    --lightGray: #DDD;
+  }
+  
+  nav {
+    height: 3rem;
+    background: var(--purple);
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+  }
+  
+  .nav-logo {
+    height: 1.75rem;
+  }
+  
+  .search-wrapper {
+    margin: 2.5rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .search-with-icon {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 50%;
+  }
+  
+  .search-field {
+    width: 100%;
+    height: 2rem;
+    outline: none;
+    padding: 0 0.75rem;
+    border-bottom-right-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
+    border-top-left-radius: 1.5rem;
+    border: 1px solid var(--darkGray);
+    margin-bottom: 0.5rem;
+  }
+  
+  .search-field:focus {
+    border: 1px solid var(--pink)
+  }
+  
+  .search-icon {
+    position: absolute;
+    top: 20%;
+    right: 3%;
+    color: var(--pink)
+  }
+  
+  .row {
+    margin-top: 3rem;
+  }
+  
+  .product-card {
+    min-height: 340px;
+    border: 1px solid var(--lightGray);
+    margin-bottom: 2rem;
+  }
+  
+  .product-image{
+    height: 200px;
+    width: 100%;
+  }
+  
+  .product-card-body {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card-title {
+    margin: 1rem;
+  }
+  
+  .card-text {
+    margin: 0 1rem 1rem 1rem;
+    min-height: 30px;
+  }
+  
+  
+  .view-product-btn {
+    background: var(--purple);
+    color: white;
+    outline: none;
+    border-radius: 0.35rem;
+    cursor: pointer;
+    width: 80%;
+    align-self: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .view-product-btn:hover {
+    transition: all ease-in;
+    background-color: var(--purpleHover);
+  }
