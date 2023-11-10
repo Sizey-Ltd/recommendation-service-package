@@ -1,6 +1,6 @@
 {
   "name": "recommendation-service",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -9,7 +9,7 @@
   },
   "author": "sizey",
   "license": "ISC",
-  "files": ["index.js", "style.css", "README.md", "sizey-recommendation.min.js", "package.json"],
+  "files": ["index.js", "style.css", "README.md", "sizey-recommendation.min.js", "package.json", "examples"],
   "dependencies": {
     "browserify": "^17.0.0"
   }

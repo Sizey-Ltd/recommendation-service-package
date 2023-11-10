@@ -46,7 +46,7 @@ To include the Recommendation Service script in your HTML file, use the followin
 
 ```html
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://raw.githack.com/SizeyLtd/recommendation-service-package/adding-recommendation-button/sizey-recommendation.min.js"></script>
+<script src="https://raw.githack.com/Sizey-Ltd/recommendation-service-package/adding-recommendation-button/sizey-recommendation.min.js"></script>
 
 <span className="SizeyContainer" id="sizey-container" 
     data-upc={product-upc} 
