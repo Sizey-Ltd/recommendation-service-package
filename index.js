@@ -86,7 +86,7 @@ if your web-shop (and brand) is using UPC or EAN code for product variation you 
 
 const openRecommendationPopup = (upc) => {
   window.open(
-    `https://my.sizey.dev/recommendation?&apikey=${APIKEY}&upc=${upc}`,
+    `https://my.sizey.dev/recommendation?&apikey=${APIKEY}&upc=${upc},measurementId=${null}`,
     "",
     "width=800,height=800"
     );
