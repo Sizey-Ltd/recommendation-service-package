@@ -13,11 +13,12 @@ function App() {
           <br />
           <span className="SizeyContainer" 
                id="sizey-container" 
-               data-upc={1234567890}
-               apikey='testapikey'
+               data-brand="brand123"
+               data-garment="full-body"
+               apikey='WjNHWFgwbkJLcXNTdFNwOExoUlA6bUZqaXJIbW4'
                recommendation_link_text='Test your size'
                recommendation_button_text='Test My Size'
-               showaslink='true'>
+               showaslink='false'>
             <div data-product-variations>
               <div data-variation-id="{VariationId}" data-variation-ean="{VariationArticleNumber}"></div>
             </div>
