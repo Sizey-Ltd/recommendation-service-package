@@ -28,8 +28,12 @@
         
         <button type="button" id="myButton">
           <!-- You can use showaslink="false" for showing link for size recommendation -->
+          <!-- You can add any of data-parameters (data-upc or data-productid or [data-brand & data-garment]) -->
           <span class="SizeyContainer" id="sizey-container" apikey="testAPIkey"
-            data-upc=1234567890
+            data-upc=upc-value
+            data-productid=productId
+            data-brand=test-brand
+            data-garment=test-garment
             recommendation_link_text="Test your size"
             recommendation_button_text="Test My Size"
             showaslink="true">
