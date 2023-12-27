@@ -12,6 +12,6 @@
   "files": ["index.js", "style.css", "README.md", "sizey-recommendation.min.js", "package.json", "examples"],
   "dependencies": {
     "browserify": "^17.0.0",
-    "recommendation-service": "^1.2.5"
+    "recommendation-service": "^1.2.6"
   }
 }
