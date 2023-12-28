@@ -140,7 +140,7 @@ Product id in Sizey portal. If this is set brand, garment and gender parameters 
 
 To use the Recommendation Service, you'll need brand data. Here's how you can obtain it:
 
-Brand in Sizey portal. To use brand for size chart garment data is also required but  upc and productId parameters can be omitted. To Obtain productId follow these stpes:
+Brand in Sizey portal. To use brand for size chart garment data is also required but upc and productId parameters can be omitted. To Obtain brand follow these stpes:
 
     1. Login to (https://portal.sizey.ai/).
 
