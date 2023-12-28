@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import 'recommendation-service';
 
+{/* You can add any of data-parameters (data-upc or data-productid or [data-brand & data-garment]) */}
 function App() {
   return (
     <div className="App">
@@ -13,11 +14,14 @@ function App() {
           <br />
           <span className="SizeyContainer" 
                id="sizey-container" 
-               data-upc={1234567890}
-               apikey='testapikey'
+               data-upc="upc-value"
+               data-productid="productId"
+               data-brand="test-brand"
+               data-garment="test-garment"
+               apikey='your-apikey'
                recommendation_link_text='Test your size'
                recommendation_button_text='Test My Size'
-               showaslink='true'>
+               showaslink='false'>
             <div data-product-variations>
               <div data-variation-id="{VariationId}" data-variation-ean="{VariationArticleNumber}"></div>
             </div>
