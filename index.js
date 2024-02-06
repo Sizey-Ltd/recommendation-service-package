@@ -67,7 +67,7 @@ const hasSizeyChart = async (dataValues) => {
     ...(garment !== undefined && { garment }),
   });
 
-  const apiUrl = `https://recommendation-api.sizey.dev/sizecharts?${queryParams.toString()}`;
+  const apiUrl = `https://recommendation-api.sizey.ai/sizecharts?${queryParams.toString()}`;
 
   try {
     const response = await fetch(apiUrl, {
@@ -112,7 +112,7 @@ const openRecommendationPopup = ({ upc, brand, garment, productid }) => {
     .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(queryParams[key])}`)
     .join('&');
   window.open(
-    `https://my.sizey.dev/recommendation?${queryString}`,
+    `https://my.sizey.ai/recommendation?${queryString}`,
     "",
     "width=800,height=800"
   );
