@@ -76,7 +76,7 @@ const hasSizeyChart = async (dataValues) => {
       },
     });
     const result = await response.json();
-    return !!result?.sizeChart?.id;
+    return !!result?.id;
   } catch (error) {
     console.error("Error fetching size chart:", error);
     return false;
