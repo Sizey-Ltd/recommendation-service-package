@@ -67,7 +67,7 @@ const hasSizeyChart = async (dataValues) => {
     ...(garment !== undefined && { garment }),
   });
 
-  const apiUrl = `https://recommendation-api.sizey.dev/sizecharts?${queryParams.toString()}`;
+  const apiUrl = `https://recommendation-api.sizey.ai/sizecharts?${queryParams.toString()}`;
 
   try {
     const response = await fetch(apiUrl, {
@@ -76,7 +76,7 @@ const hasSizeyChart = async (dataValues) => {
       },
     });
     const result = await response.json();
-    return !!result?.sizeChart?.id;
+    return !!result?.id;
   } catch (error) {
     console.error("Error fetching size chart:", error);
     return false;
@@ -112,7 +112,7 @@ const openRecommendationPopup = ({ upc, brand, garment, productid }) => {
     .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(queryParams[key])}`)
     .join('&');
   window.open(
-    `https://my.sizey.dev/recommendation?${queryString}`,
+    `https://my.sizey.ai/recommendation?${queryString}`,
     "",
     "width=800,height=800"
   );
