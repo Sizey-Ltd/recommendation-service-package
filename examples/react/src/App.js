@@ -12,19 +12,16 @@ function App() {
             Click this link/button to open Sizey recommendation popup
           </div>
           <br />
-          <span className="SizeyContainer" 
-               id="sizey-container" 
-               data-upc="upc-value"
-               data-productid="productId"
-               data-brand="test-brand"
-               data-garment="test-garment"
-               apikey='your-apikey'
-               recommendation_link_text='Test your size'
-               recommendation_button_text='Test My Size'
-               showaslink='false'>
-            <div data-product-variations>
-              <div data-variation-id="{VariationId}" data-variation-ean="{VariationArticleNumber}"></div>
-            </div>
+          <span
+            id="sizey-container" 
+            apikey="your-apikey"
+            data-upc="upc-value"
+            data-productid="productId"
+            data-brand="test-brand"
+            data-garment="test-garment"
+            recommendation_link_text="Test your size"
+            recommendation_button_text="Test My Size"
+            showaslink="false">
           </span>
         </div>
       </div>
