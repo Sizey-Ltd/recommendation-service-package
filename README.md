@@ -25,21 +25,17 @@ Import the package in your JavaScript/React code:
 
 Use this syntax in you Component or where you are going to import this package
 ```html
-    <span className="SizeyContainer" id="sizey-container" 
-        data-upc="product-upc"
-        data-productid="product-productid"
-        data-brand="sizechart-brand"
-        data-garment="garment-type"
-        apikey='APIKEY'
-        recommendation_link_text='Test your size'
-        recommendation_button_text='Test My Size'
-        showaslink="false">
-        <div data-product-variations>
-            <div data-variation-id="{VariationId}" 
-                data-variation-ean="{VariationArticleNumber}">    
-            </div>
-        </div>
-    </span>
+<span
+    id="sizey-container" 
+    apikey="your-apikey"
+    data-upc="upc-value"
+    data-productid="productId"
+    data-brand="test-brand"
+    data-garment="test-garment"
+    recommendation_link_text="Test your size"
+    recommendation_button_text="Test My Size"
+    showaslink="false">
+</span>
 ```
 
 
@@ -51,20 +47,16 @@ To include the Recommendation Service script in your HTML file, use the followin
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://raw.githack.com/Sizey-Ltd/recommendation-service-package/adding-recommendation-button/sizey-recommendation.min.js"></script>
 
-<span className="SizeyContainer" id="sizey-container" 
-    apikey="APIKEY"
-    data-upc="product-upc"
-    data-productid="product-productid"
-    data-brand="sizechart-brand"
-    data-garment="garment-type"
-    recommendation_link_text='Test your size'
-    recommendation_button_text='Test My Size'
-    showaslink="false">
-    <div data-product-variations>
-        <div data-variation-id="{VariationId}" 
-            data-variation-ean="{VariationArticleNumber}">    
-        </div>
-    </div>
+<span
+    id="sizey-container" 
+    apikey="your-apikey"
+    data-upc="upc-value"
+    data-productid="productId"
+    data-brand="test-brand"
+    data-garment="test-garment"
+    recommendation_link_text="Test your size"
+    recommendation_button_text="Test My Size"
+    showaslink="true">
 </span>
 ```
 
@@ -129,10 +121,10 @@ To use the Recommendation Service, you'll need brand and garment data. Here's ho
 
     1. Login to (https://portal.sizey.ai/).
 
-    2. After successfully logging in, navigate to https://portal.sizey.dev/my-sizecharts within your Sizey Portal account.
+    2. After successfully logging in, navigate to https://portal.sizey.ai/my-sizecharts within your Sizey Portal account.
 
     3. Here, you will see a "Create New Chart" button in the user interface. Click on it to create a new size chart.
 
-    4. You will be redirected to https://portal.sizey.dev/my-sizecharts/new page. Follow the instructions to set up and configure your size chart to access the following details:
+    4. You will be redirected to https://portal.sizey.ai/my-sizecharts/new page. Follow the instructions to set up and configure your size chart to access the following details:
 
    - **Brand & Garment Data:** The Brand & Garment values represent different size chart. You can use these values as input when using the Recommendation Service.
