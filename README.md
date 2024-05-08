@@ -115,7 +115,7 @@ To include the sizey Recommendation Service script in your HTML file, use the fo
 To include the Product Synchronization script in your HTML file, use the following code:
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://rawcdn.githack.com/Sizey-Ltd/recommendation-service-package/dcd2c2842b6821ca55acbdb0206fc0d2b2f7071f/sizey-sync-html.min.js" type="module"></script>
+<script src="https://raw.githack.com/Sizey-Ltd/recommendation-service-package/v2.0.1/sizey-sync-html.min.js" type="module"></script>
 
     ```html
     <span 
