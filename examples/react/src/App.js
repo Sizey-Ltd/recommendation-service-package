@@ -1,8 +1,11 @@
 import React from 'react';
 import './App.css';
-import 'recommendation-service';
+import { sizeyRecommendation } from 'recommendation-service';
 
 function App() {
+  useEffect(() => {
+      sizeyRecommendation();
+    }, []);
   return (
     <div className="App">
       <div className="container">

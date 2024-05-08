@@ -12,37 +12,85 @@ To use this Recommendation Service, you can install it via npm:
 npm install recommendation-service
 
 ```
-Here's how you can use this Recommendation Service in your webshop or application:
+Here's how you can use this Recommendation Service and Product Synchronization in your webshop or application:
 
 Import the package in your JavaScript/React code:
 
-    import RecommendationService from 'recommendation-service';
+    import { sizeySync } from 'recommendation-service';  // For Sync products with sizey
+
+    import { sizeyRecommendation } from 'recommendation-service';  // For Recommendation service
 
 
 # Usage in React Project
 
-    import RecommendationService from 'recommendation-service';
+## Usage of Recommendation Service
 
-Use this syntax in you Component or where you are going to import this package
-```html
-    <span className="SizeyContainer" id="sizey-container" 
-        data-upc={product-upc} 
-        apikey='APIKEY'
-        recommendation_link_text='Test your size'
-        recommendation_button_text='Test My Size'
+To use the Recommendation service, follow these steps:
+
+1. Import the `sizeyRecommendation` function from the `recommendation-service` package:
+
+    ```javascript
+    import { sizeyRecommendation } from 'recommendation-service';
+    ```
+
+2. Add the following HTML code to your component where you want to integrate the Recommendation service:
+
+    ```html
+    <span
+        id="sizey-container" 
+        apikey="your-apikey"
+        data-upc="upc-value"
+        data-productid="productId"
+        data-brand="test-brand"
+        data-garment="test-garment"
+        recommendation_link_text="Test your size"
+        recommendation_button_text="Test My Size"
         showaslink="false">
-        <div data-product-variations>
-            <div data-variation-id="{VariationId}" 
-                data-variation-ean="{VariationArticleNumber}">    
-            </div>
-        </div>
     </span>
-```
+    ```
+
+## Usage of Product Synchronization
+
+To use the Product synchronization feature, follow these steps:
+
+1. Add the following HTML code to your component where you want to integrate the Product synchronization:
+
+    ```html
+    <span 
+        id="sizey-container" 
+        apikey="your-apikey"
+        data-products='[
+            {
+                "attributes": {
+                    "id": "product_id",
+                    "name": "Product name",
+                    "brandName": "Brand name",
+                    "productType": "type of product",
+                    "description": "General description",
+                    "variations": [
+                        {
+                            "color": "Black",
+                            "size": "L",
+                            "eanCode": "VariationId",
+                            "fabric": "Cotton",
+                            "isValid": true
+                        }
+                    ],
+                    "isPublic": true
+                }
+            }
+        ]'
+        sync_link_text="Sync Products"
+        showaslink="false">
+    </span>
+    ```
 
 
 # Usage in HTML Project
 
-To include the Recommendation Service script in your HTML file, use the following code:
+## Usage of Sizey Recommendation
+
+To include the sizey Recommendation Service script in your HTML file, use the following code:
 
 ```html
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -62,13 +110,61 @@ To include the Recommendation Service script in your HTML file, use the followin
 </span>
 ```
 
+## Usage of Product Synchronization
 
-# Recommendation Service(Options)
-    apikey: Your API key (string).
-    recommendation_link_text: Text for the recommendation link (string).
-    recommendation_button_text: Text for the recommendation button (string).
-    showaslink: Set to true to use a link, or false to use a button (string).
-    data-upc: Your product UPC key (string).
+To include the Product Synchronization script in your HTML file, use the following code:
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://rawcdn.githack.com/Sizey-Ltd/recommendation-service-package/dcd2c2842b6821ca55acbdb0206fc0d2b2f7071f/sizey-sync-html.min.js" type="module"></script>
+
+    ```html
+    <span 
+        id="sizey-container" 
+        apikey="your-apikey"
+        data-products='[
+            {
+                "attributes": {
+                    "id": "product_id",
+                    "name": "Product name",
+                    "brandName": "Brand name",
+                    "productType": "type of product",
+                    "description": "General description",
+                    "variations": [
+                        {
+                            "color": "Black",
+                            "size": "L",
+                            "eanCode": "VariationId",
+                            "fabric": "Cotton",
+                            "isValid": true
+                        }
+                    ],
+                    "isPublic": true
+                }
+            }
+        ]'
+        sync_link_text="Sync Products"
+        showaslink="false">
+    </span>
+    ```
+
+
+
+
+# Sizey Service(Options)
+
+When initializing the Recommendation Service, provide the following options:
+
+- **apikey:** Your API key (string).
+- **recommendation_link_text:** Text for the recommendation link (string).
+- **recommendation_button_text:** Text for the recommendation button (string).
+- **showaslink:** Set to true to use a link, or false to use a button (string).
+- **data-products:** Array of product which need to sync with sizey (Array of object).
+- **sync_link_text:** Text for the sync button (string).
+- **data-upc:** Your product UPC key (string).
+- **data-productid:** Your product ID key (string).
+- **data-brand & data-garment:** Your product brand & garment key (string).
+
+**Note:** At least one of the parameters (`data-upc`, `data-productid`, [`data-brand`& `data-garment`]) is required for the `Sizey Recommendation Service` to function correctly. You can choose the one that best fits your implementation.
 
 ## Obtaining Your API Key
 

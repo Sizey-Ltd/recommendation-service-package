@@ -1,16 +1,44 @@
 {
   "name": "recommendation-service",
-  "version": "1.2.3",
+  "version": "2.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "browserify ./index.js -o ./sizey-recommendation.min.js"
+    "build": "browserify -t babelify ./sizey-recommendation.js -o ./sizey-recommendation.min.js && browserify -t babelify ./sizey-sync-html.js -o ./sizey-sync-html.min.js"
   },
   "author": "sizey",
   "license": "ISC",
-  "files": ["index.js", "style.css", "README.md", "sizey-recommendation.min.js", "package.json", "examples"],
+  "files": [
+    "index.js",
+    "style.css",
+    "README.md",
+    "sizey-recommendation.js",
+    "sizey-recommendation.min.js",
+    "sizey-sync.js",
+    "sizey-sync-html.js",
+    "sizey-sync-html.min.js",
+    "package.json",
+    "examples"
+  ],
+  "keywords": [
+    "recommendation",
+    "sizey",
+    "products",
+    "UPC",
+    "Synchronize",
+    "Sync"
+  ],
   "dependencies": {
-    "browserify": "^17.0.0"
+    "browserify": "^17.0.0",
+    "recommendation-service": "^2.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.5",
+    "@babel/preset-env": "^7.24.5",
+    "babelify": "^10.0.0"
+  },
+  "babel": {
+    "presets": ["@babel/preset-env"]
   }
 }
