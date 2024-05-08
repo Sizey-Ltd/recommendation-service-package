@@ -94,30 +94,29 @@ To include the sizey Recommendation Service script in your HTML file, use the fo
 
 ```html
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://raw.githack.com/Sizey-Ltd/recommendation-service-package/adding-recommendation-button/sizey-recommendation.min.js"></script>
+<script src="https://rawcdn.githack.com/Sizey-Ltd/recommendation-service-package/5a62a06770c76a1cdbcf2fd1aa16bee8b999151e/sizey-recommendation.min.js"></script>
 
-<span className="SizeyContainer" id="sizey-container" 
-    data-upc={product-upc} 
-    apikey='APIKEY'
-    recommendation_link_text='Test your size'
-    recommendation_button_text='Test My Size'
+<span 
+    id="sizey-container" 
+    apikey='your-apikey'
+    data-upc="upc-value"
+    data-productid="productId"
+    data-brand="test-brand"
+    data-garment="test-garment"
+    recommendation_link_text="Test your size"
+    recommendation_button_text="Test My Size"
     showaslink="false">
-    <div data-product-variations>
-        <div data-variation-id="{VariationId}" 
-            data-variation-ean="{VariationArticleNumber}">    
-        </div>
-    </div>
 </span>
 ```
 
 ## Usage of Product Synchronization
 
 To include the Product Synchronization script in your HTML file, use the following code:
-
+ 
+```html
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://raw.githack.com/Sizey-Ltd/recommendation-service-package/v2.0.1/sizey-sync-html.min.js" type="module"></script>
+<script src="https://rawcdn.githack.com/Sizey-Ltd/recommendation-service-package/5a62a06770c76a1cdbcf2fd1aa16bee8b999151e/sizey-sync-html.min.js" type="module"></script>
 
-    ```html
     <span 
         id="sizey-container" 
         apikey="your-apikey"
@@ -145,7 +144,7 @@ To include the Product Synchronization script in your HTML file, use the followi
         sync_link_text="Sync Products"
         showaslink="false">
     </span>
-    ```
+```
 
 
 
