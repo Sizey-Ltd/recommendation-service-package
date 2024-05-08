@@ -173,7 +173,6 @@ const sizeyRecommendation = () => {
         }
       });
   
-      console.log("🚀 ~ window.addEventListener ~ showAsLink:", showAsLink)
       if (hasSizeyChart(dataValues)) {
         var element;
         if (showAsLink) {
