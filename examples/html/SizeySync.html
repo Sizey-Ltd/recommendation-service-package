@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" rel="stylesheet"
+    crossorigin="anonymous" />
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <!-- Script you need to add to use that package  -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://rawcdn.githack.com/Sizey-Ltd/recommendation-service-package/5a62a06770c76a1cdbcf2fd1aa16bee8b999151e/sizey-sync-html.min.js" type="module"></script>
+
+  <title>To Synchronize Products with Sizey </title>
+</head>
+
+<body>
+
+
+  <div class="container">
+    <div class="search-wrapper">
+      <div class="search-results" id="results">Click this link/button to Synchronize products with sizey</div>
+      <br>
+        <div>
+            <!-- You can use showaslink="false" for showing link -->
+            <span 
+                id="sizey-container" 
+                apikey="Znkya2ZMMXRNVmxYbWxqZ05jdlc6RGVHcGRjdDI="
+                data-products='[
+                    {
+                        "attributes": {
+                            "id": "product1",
+                            "name": "Product 1 with Variations",
+                            "garment": null,
+                            "checked": false,
+                            "brandName": "Brand1",
+                            "productType": "Type1",
+                            "description": "Product with variations for testing",
+                            "variations": [
+                            {
+                            "color": "Black",
+                            "size": "L",
+                            "eanCode": "upcCodevariation",
+                            "fabric": "Elastan",
+                            "isValid": true
+                            }
+                            ],
+                            "isPublic": true
+                        }
+                    },
+                    {
+                        "attributes": {
+                            "id": "product2",
+                            "name": "Product 2 without Variations",
+                            "garment": null,
+                            "checked": false,
+                            "brandName": "Brand2",
+                            "productType": "Type2",
+                            "description": "Product without variations for testing",
+                            "variations": [],
+                            "isPublic": true
+                        }
+                    }
+                ]'
+                sync_link_text="Sync Products"
+                showaslink="false">
+            </span>
+        </div>
+    </div>
+  </div>
+</body>
+
+</html>

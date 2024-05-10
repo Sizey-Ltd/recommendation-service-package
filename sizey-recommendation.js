@@ -132,8 +132,8 @@ const sizeyRecommendation = () => {
       };
     };
   
-    window.addEventListener("load", async (event) => {
-      const sizeyContainer = document.querySelector("#sizey-container");
+    const sizeyContainer = document.querySelector("#sizey-container");
+    if (sizeyContainer) {
       if(typeof sizey_api_data !== "undefined"){
         APIKEY = sizey_api_data.APIKEY || 'TzQzeGZXOU5CQ0RSS1N4TEhyb1k6bTlDNEttUVM=';
         RECOMMENDATION_LINK_TEXT = sizey_api_data.RECOMMENDATION_LINK_TEXT || "Test your size";
@@ -144,10 +144,6 @@ const sizeyRecommendation = () => {
         RECOMMENDATION_LINK_TEXT = sizeyContainer.getAttribute("recommendation_link_text") || "Test your size";
         RECOMMENDATION_BUTTON_TEXT = sizeyContainer.getAttribute("recommendation_button_text") || "Test your size";
         showAsLink = sizeyContainer.getAttribute("showaslink") === "true";
-      }
-      if (!sizeyContainer) {
-        console.log("sizey-container not found.");
-        return;
       }
   
       const dataAttributes = ['upc', 'productid', 'brand', 'garment'];
@@ -199,7 +195,9 @@ const sizeyRecommendation = () => {
         };
         sizeyContainer.appendChild(element);
       }
-    });
+    }else {
+      alert("sizey-container not found.");
+    }
   };
   
   export { sizeyRecommendation };

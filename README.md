@@ -2,7 +2,7 @@
 
 ## Overview
 
-This package provides a Recommendation Service for integrating size recommendations into your webshop or application.
+This package provides recommendation service for integrating Sizey Size Recommendations and Product Data Synchronizing service into your online sales platform or product data management system (like ERP or PIM).
 
 ## Installation
 
@@ -85,6 +85,9 @@ To use the Product synchronization feature, follow these steps:
     </span>
     ```
 
+## Styling the Buttons
+ - To style the Recommendation service button, use the `.recommendation-service-button` class.
+ - To style the Sync Product button, use the `.sync-product-button` class.
 
 # Usage in HTML Project
 

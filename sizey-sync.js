@@ -55,12 +55,8 @@ const sizeySync = () => {
     }
   };
 
-  window.addEventListener('load', async () => {
+  if (document.querySelector('#sizey-container')) {
     const sizeyContainer = document.querySelector('#sizey-container');
-    if (!sizeyContainer) {
-      alert('sizey-container not found.');
-      return;
-    }
 
     const apiKey = sizeyContainer.getAttribute('apikey');
     if (!apiKey) {
@@ -90,6 +86,7 @@ const sizeySync = () => {
       } else {
         const button = document.createElement('button');
         button.textContent = syncLinkText;
+        button.className = 'sync-product-button';
         button.addEventListener('click', async () => {
           await createProducts(productsData, apiKey);
         });
@@ -98,7 +95,9 @@ const sizeySync = () => {
     } catch (error) {
       console.error('Error:', error.message);
     }
-  });
+  } else {
+    alert('sizey-container not found.');
+  }
 }
 
 export { sizeySync };

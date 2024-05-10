@@ -14,7 +14,7 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://rawcdn.githack.com/Sizey-Ltd/recommendation-service-package/5a62a06770c76a1cdbcf2fd1aa16bee8b999151e/sizey-recommendation.min.js" type="module"></script>
 
-  <title>For Pop-up</title>
+  <title>For Recommendation Service Pop-up</title>
 </head>
 
 <body>
@@ -25,16 +25,13 @@
       <div class="search-results" id="results">Click this link/button to open Sizey recommendation popup</div>
       <br>
     <div>
-        
-        <button type="button" id="myButton">
-          <!-- You can use showaslink="false" for showing link for size recommendation -->
-          <span id="sizey-container" apikey="testAPIkey"
-            data-upc=1234567890
-            recommendation_link_text="Test your size"
-            recommendation_button_text="Test My Size"
-            showaslink="true">
-          </span>
-        </button>
+        <!-- You can use showaslink="false" for showing link for size recommendation -->
+        <span id="sizey-container" apikey="testAPIkey"
+          data-upc=1234567890
+          recommendation_link_text="Test your size"
+          recommendation_button_text="Test My Size"
+          showaslink="true">
+        </span>
       </div>
     </div>
   </div>
