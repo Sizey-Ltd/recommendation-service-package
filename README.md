@@ -2,7 +2,9 @@
 
 ## Overview
 
-This package provides recommendation service for integrating Sizey Size Recommendations and Product Data Synchronizing service into your online sales platform or product data management system (like ERP or PIM).
+This package provides Sizey Size Recommendations and Product Data Synchronizing services for integrating your online sales platform or product data management system (like ERP or PIM) with Sizey Hub.
+
+To setup your company’s service account in Sizey Hub, go to https://portal.sizey.ai
 
 ## Installation
 
