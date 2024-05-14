@@ -55,7 +55,13 @@ To use the Recommendation service, follow these steps:
 
 To use the Product synchronization feature, follow these steps:
 
-1. Add the following HTML code to your component where you want to integrate the Product synchronization:
+1. Import the `sizeySync` function from the `recommendation-service` package:
+
+    ```javascript
+    import { sizeySync } from 'recommendation-service';
+    ```
+
+2. Add the following HTML code to your component where you want to integrate the Product synchronization:
 
     ```html
     <span 
@@ -99,7 +105,7 @@ To include the sizey Recommendation Service script in your HTML file, use the fo
 
 ```html
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://rawcdn.githack.com/Sizey-Ltd/recommendation-service-package/a1bad858d5ffa3fbacedf2177379a7701a3dd583/sizey-recommendation.min.js"></script>
+<script src="https://rawcdn.githack.com/Sizey-Ltd/recommendation-service-package/a1bad858d5ffa3fbacedf2177379a7701a3dd583/sizey-recommendation.min.js" type="module"></script>
 
 <span 
     id="sizey-container" 
