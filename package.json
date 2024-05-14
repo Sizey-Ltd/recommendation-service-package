@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "browserify -t babelify ./sizey-recommendation.js -o ./sizey-recommendation.min.js && browserify -t babelify ./sizey-sync-html.js -o ./sizey-sync-html.min.js"
+    "build": "browserify ./sizey-recommendation.js > ./sizey-recommendation.min.js && browserify ./sizey-sync.js > ./sizey-sync.min.js"
   },
   "author": "sizey",
   "license": "ISC",

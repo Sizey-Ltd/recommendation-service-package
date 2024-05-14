@@ -59,7 +59,7 @@ To use the Product synchronization feature, follow these steps:
 
     ```html
     <span 
-        id="sizey-container" 
+        id="sizey-sync-container" 
         apikey="your-apikey"
         data-products='[
             {
@@ -120,10 +120,10 @@ To include the Product Synchronization script in your HTML file, use the followi
  
 ```html
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://rawcdn.githack.com/Sizey-Ltd/recommendation-service-package/5a62a06770c76a1cdbcf2fd1aa16bee8b999151e/sizey-sync-html.min.js" type="module"></script>
+<script src="https://rawcdn.githack.com/Sizey-Ltd/recommendation-service-package/5a62a06770c76a1cdbcf2fd1aa16bee8b999151e/sizey-sync.min.js" type="module"></script>
 
     <span 
-        id="sizey-container" 
+        id="sizey-sync-container" 
         apikey="your-apikey"
         data-products='[
             {
