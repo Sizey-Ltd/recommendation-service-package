@@ -99,7 +99,7 @@ To include the sizey Recommendation Service script in your HTML file, use the fo
 
 ```html
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://rawcdn.githack.com/Sizey-Ltd/recommendation-service-package/5a62a06770c76a1cdbcf2fd1aa16bee8b999151e/sizey-recommendation.min.js"></script>
+<script src="https://rawcdn.githack.com/Sizey-Ltd/recommendation-service-package/a1bad858d5ffa3fbacedf2177379a7701a3dd583/sizey-recommendation.min.js"></script>
 
 <span 
     id="sizey-container" 
@@ -120,7 +120,7 @@ To include the Product Synchronization script in your HTML file, use the followi
  
 ```html
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://rawcdn.githack.com/Sizey-Ltd/recommendation-service-package/5a62a06770c76a1cdbcf2fd1aa16bee8b999151e/sizey-sync.min.js" type="module"></script>
+<script src="https://rawcdn.githack.com/Sizey-Ltd/recommendation-service-package/a1bad858d5ffa3fbacedf2177379a7701a3dd583/sizey-sync.min.js" type="module"></script>
 
     <span 
         id="sizey-sync-container" 
