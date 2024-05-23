@@ -110,7 +110,7 @@ const openRecommendationPopup = ({ upc, brand, garment, productid }) => {
     .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(queryParams[key])}`)
     .join('&');
   window.open(
-    `https://my.sizey.ai/recommendation?${queryString}`,
+    `https://my.sizey.ai/recommendation?${queryString}&measurementId=null`,
     "",
     "width=800,height=800"
   );
