@@ -105,7 +105,7 @@ To include the sizey Recommendation Service script in your HTML file, use the fo
 
 ```html
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://rawcdn.githack.com/Sizey-Ltd/recommendation-service-package/a1bad858d5ffa3fbacedf2177379a7701a3dd583/sizey-recommendation.min.js" type="module"></script>
+<script src="https://rawcdn.githack.com/Sizey-Ltd/recommendation-service-package/f6587139047815cc42a049cd3ed8870038f66477/sizey-recommendation.min.js" type="module"></script>
 
 <span 
     id="sizey-container" 
