@@ -13,6 +13,33 @@
   <!-- Script you need to add to use that package  -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://rawcdn.githack.com/Sizey-Ltd/recommendation-service-package/f6587139047815cc42a049cd3ed8870038f66477/sizey-recommendation.min.js" type="module"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const handleMessage = (e) => {
+        const mv = e.data;
+        if (mv.event === "sizey-recommendations") {
+          sessionStorage.setItem('sizey-recommendation-size', mv?.recommendations[0].size);
+          updateRecommendationMessage();
+        }
+      };
+
+      const updateRecommendationMessage = () => {
+        const recommendationMessage = document.getElementById('recommendation-message');
+        if (sessionStorage.getItem('sizey-recommendation-size')) {
+          recommendationMessage.innerText = `Recommendation size: ${sessionStorage.getItem('sizey-recommendation-size')}`;
+        } else {
+          recommendationMessage.innerText = '';
+        }
+      };
+
+      window.addEventListener("message", handleMessage)
+
+      const storedSize = sessionStorage.getItem('sizey-recommendation-size');
+      if (storedSize) {
+        updateRecommendationMessage(storedSize);
+      }
+    });
+  </script>
 
   <title>For Recommendation Service Pop-up</title>
 </head>
@@ -35,6 +62,8 @@
           showaslink="true">
         </span>
       </div>
+      <br>
+      <div id="recommendation-message"></div>
     </div>
   </div>
 </body>

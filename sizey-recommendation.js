@@ -122,14 +122,6 @@ if your web-shop (and brand) is using internal (non general) product id, then yo
 
 // choose either one for your needs!!
 
-const registerMessageListener = (callback) => {
-  window.onmessage = (e) => {
-    const mv = e.data;
-    if (mv.event === "sizey-recommendations") {
-      callback(mv?.recommendations[0].size);
-    }
-  };
-};
   
 const sizeyContainer = document.querySelector("#sizey-container");
 if (sizeyContainer) {
@@ -151,20 +143,6 @@ if (sizeyContainer) {
     const value = sizeyContainer.dataset[attribute];
     if (value) {
       dataValues[attribute] = value;
-    }
-  });
-
-  registerMessageListener((size) => {
-    var recommendationNode = document.querySelector("#sizey-recommendation");
-    if (!recommendationNode) {
-      recommendationNode = document.createElement("span");
-      recommendationNode.id = "sizey-recommendation";
-      sizeyContainer.appendChild(recommendationNode);
-    }
-    if (size) {
-      recommendationNode.innerText = "\n" + RECOMMENDATION_TEXT.replace(/\$SIZE/g, size);
-    } else {
-      recommendationNode.innerText = "\n" + RECOMMENDATION_NOTFOUND_TEXT;
     }
   });
 

@@ -1,9 +1,28 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import { sizeyRecommendation, sizeySync } from 'recommendation-service';
 
 
 function App() {
+
+  const [recommendedSize, setRecommendedSize] = useState(sessionStorage.getItem('sizey-recommendation-size'));
+
+  useEffect(() => {
+    sizeyRecommendation();
+
+    const handleMessage = (e) => {
+      const mv = e.data;
+      if (mv.event === "sizey-recommendations") {
+        const size = mv?.recommendations[0].size;
+        if (size) {
+          sessionStorage.setItem('sizey-recommendation-size', size);
+          setRecommendedSize(sessionStorage.getItem('sizey-recommendation-size'));
+        }
+      }
+    };
+
+    window.addEventListener("message", handleMessage);
+  }, []);
 
   useEffect(() => {
       sizeyRecommendation();
@@ -23,6 +42,10 @@ function App() {
               recommendation_button_text='Test My Size'
               showaslink='false'>
             </span>
+            <br />
+            <div id="recommendation-message">
+              {recommendedSize ? `Recommendation size: ${recommendedSize}` : ''}
+            </div>
             <span 
               id="sizey-sync-container" 
               apikey="your-apikey"

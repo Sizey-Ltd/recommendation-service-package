@@ -35,7 +35,29 @@ To use the Recommendation service, follow these steps:
     import { sizeyRecommendation } from 'recommendation-service';
     ```
 
-2. Add the following HTML code to your component where you want to integrate the Recommendation service:
+2. Add the following Hook
+    ```javascript
+    const [recommendedSize, setRecommendedSize] = useState(sessionStorage.getItem('sizey-recommendation-size'));
+
+    useEffect(() => {
+        sizeyRecommendation();
+
+        const handleMessage = (e) => {
+            const mv = e.data;
+            if (mv.event === "sizey-recommendations") {
+                const size = mv?.recommendations[0].size;
+                if (size) {
+                    sessionStorage.setItem('sizey-recommendation-size', size);
+                    setRecommendedSize(sessionStorage.getItem('sizey-recommendation-size'));
+                }
+            }
+        };
+
+        window.addEventListener("message", handleMessage);
+    }, []);
+    ```
+
+3. Add the following HTML code to your component where you want to integrate the Recommendation service:
 
     ```html
     <span
@@ -49,6 +71,10 @@ To use the Recommendation service, follow these steps:
         recommendation_button_text="Test My Size"
         showaslink="false">
     </span>
+    <br />
+    <div id="recommendation-message">
+        {recommendedSize ? `Recommendation size: ${recommendedSize}` : ''}
+    </div>
     ```
 
 ## Usage of Product Synchronization
@@ -106,6 +132,33 @@ To include the sizey Recommendation Service script in your HTML file, use the fo
 ```html
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://rawcdn.githack.com/Sizey-Ltd/recommendation-service-package/f6587139047815cc42a049cd3ed8870038f66477/sizey-recommendation.min.js" type="module"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const handleMessage = (e) => {
+        const mv = e.data;
+        if (mv.event === "sizey-recommendations") {
+          sessionStorage.setItem('sizey-recommendation-size', mv?.recommendations[0].size);
+          updateRecommendationMessage();
+        }
+      };
+
+      const updateRecommendationMessage = () => {
+        const recommendationMessage = document.getElementById('recommendation-message');
+        if (sessionStorage.getItem('sizey-recommendation-size')) {
+          recommendationMessage.innerText = `Recommendation size: ${sessionStorage.getItem('sizey-recommendation-size')}`;
+        } else {
+          recommendationMessage.innerText = '';
+        }
+      };
+
+      window.addEventListener("message", handleMessage)
+
+      const storedSize = sessionStorage.getItem('sizey-recommendation-size');
+      if (storedSize) {
+        updateRecommendationMessage(storedSize);
+      }
+    });
+</script>
 
 <span 
     id="sizey-container" 
@@ -118,6 +171,8 @@ To include the sizey Recommendation Service script in your HTML file, use the fo
     recommendation_button_text="Test My Size"
     showaslink="false">
 </span>
+<br>
+<div id="recommendation-message"></div>
 ```
 
 ## Usage of Product Synchronization
