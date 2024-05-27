@@ -43,17 +43,25 @@ To use the Recommendation service, follow these steps:
         sizeyRecommendation();
 
         const handleMessage = (e) => {
-            const mv = e.data;
-            if (mv.event === "sizey-recommendations") {
-                const size = mv?.recommendations[0].size;
-                if (size) {
-                    sessionStorage.setItem('sizey-recommendation-size', size);
-                    setRecommendedSize(sessionStorage.getItem('sizey-recommendation-size'));
+            try {
+                const eventData = e.data;
+                if (eventData.event === "sizey-recommendations" && eventData.recommendations.length > 0) {
+                    const size = eventData.recommendations[0].size;
+                    if (size) {
+                        sessionStorage.setItem('sizey-recommendation-size', size);
+                        setRecommendedSize(sessionStorage.getItem('sizey-recommendation-size'));
+                    }
                 }
+            } catch {
+                console.error('Error processing recommendations:', error);
             }
         };
 
         window.addEventListener("message", handleMessage);
+
+        return () => {
+            window.removeEventListener("message", handleMessage);
+        };
     }, []);
     ```
 
@@ -135,10 +143,14 @@ To include the sizey Recommendation Service script in your HTML file, use the fo
 <script>
     document.addEventListener('DOMContentLoaded', () => {
       const handleMessage = (e) => {
-        const mv = e.data;
-        if (mv.event === "sizey-recommendations") {
-          sessionStorage.setItem('sizey-recommendation-size', mv?.recommendations[0].size);
-          updateRecommendationMessage();
+        try {
+            const eventData = e.data;
+            if (eventData.event === "sizey-recommendations" && eventData.recommendations.length > 0) {
+              sessionStorage.setItem('sizey-recommendation-size', eventData.recommendations[0].size);
+              updateRecommendationMessage();
+            }
+        }catch {
+            console.error('Error processing recommendations:', error);
         }
       };
 
@@ -152,6 +164,10 @@ To include the sizey Recommendation Service script in your HTML file, use the fo
       };
 
       window.addEventListener("message", handleMessage)
+
+      window.addEventListener('beforeunload', () => {
+        window.removeEventListener("message", handleMessage);
+      });
 
       const storedSize = sessionStorage.getItem('sizey-recommendation-size');
       if (storedSize) {

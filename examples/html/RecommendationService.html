@@ -16,10 +16,14 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const handleMessage = (e) => {
-        const mv = e.data;
-        if (mv.event === "sizey-recommendations") {
-          sessionStorage.setItem('sizey-recommendation-size', mv?.recommendations[0].size);
-          updateRecommendationMessage();
+        try {
+          const eventData = e.data;
+          if (eventData.event === "sizey-recommendations" && eventData.recommendations.length > 0) {
+            sessionStorage.setItem('sizey-recommendation-size', eventData.recommendations[0].size);
+            updateRecommendationMessage();
+          }
+        }catch {
+          console.error('Error processing recommendations:', error);
         }
       };
 
@@ -33,6 +37,10 @@
       };
 
       window.addEventListener("message", handleMessage)
+
+      window.addEventListener('beforeunload', () => {
+        window.removeEventListener("message", handleMessage);
+      });
 
       const storedSize = sessionStorage.getItem('sizey-recommendation-size');
       if (storedSize) {
