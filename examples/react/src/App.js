@@ -15,6 +15,7 @@ function App() {
         const eventData = e.data;
         if (eventData.event === "sizey-recommendations" && eventData.recommendations.length > 0) {
           const size = eventData.recommendations[0].size;
+          // use size directly or save in sessionStorage and use anywhere
           if (size) {
             sessionStorage.setItem('sizey-recommendation-size', size);
             setRecommendedSize(sessionStorage.getItem('sizey-recommendation-size'));

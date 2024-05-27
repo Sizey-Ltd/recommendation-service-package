@@ -19,6 +19,7 @@
         try {
           const eventData = e.data;
           if (eventData.event === "sizey-recommendations" && eventData.recommendations.length > 0) {
+            // use size directly or save in sessionStorage and use anywhere
             sessionStorage.setItem('sizey-recommendation-size', eventData.recommendations[0].size);
             updateRecommendationMessage();
           }

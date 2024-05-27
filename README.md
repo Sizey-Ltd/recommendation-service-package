@@ -65,6 +65,8 @@ To use the Recommendation service, follow these steps:
     }, []);
     ```
 
+**Note:** You can use the recommended `size` directly or save it in `sessionStorage` and use it anywhere in your application. For instance, you might use the size to pre-select a product variant or display it in other parts of your UI.
+
 3. Add the following HTML code to your component where you want to integrate the Recommendation service:
 
     ```html
@@ -190,6 +192,8 @@ To include the sizey Recommendation Service script in your HTML file, use the fo
 <br>
 <div id="recommendation-message"></div>
 ```
+**Note:** You can use the recommended `size` directly or save it in `sessionStorage` and use it anywhere in your application. For instance, you might use the size to pre-select a product variant or display it in other parts of your UI.
+
 
 ## Usage of Product Synchronization
 
