@@ -38,6 +38,7 @@ To use the Recommendation service, follow these steps:
 2. Add the following Hook
     ```javascript
     const [recommendedSize, setRecommendedSize] = useState(sessionStorage.getItem('sizey-recommendation-size'));
+    const [recommendedUPC, setRecommendedUPC] = useState(sessionStorage.getItem('sizey-recommendation-upc'));
 
     useEffect(() => {
         sizeyRecommendation();
@@ -47,9 +48,14 @@ To use the Recommendation service, follow these steps:
                 const eventData = e.data;
                 if (eventData.event === "sizey-recommendations" && eventData.recommendations.length > 0) {
                     const size = eventData.recommendations[0].size;
+                    const recommendedVariationUPC = eventData.eanCode;
                     if (size) {
                         sessionStorage.setItem('sizey-recommendation-size', size);
                         setRecommendedSize(sessionStorage.getItem('sizey-recommendation-size'));
+                    }
+                    if (recommendedVariationUPC) {
+                        sessionStorage.setItem('sizey-recommendation-upc', recommendedVariationUPC);
+                        setRecommendedUPC(sessionStorage.getItem('sizey-recommendation-upc'));
                     }
                 }
             } catch {
@@ -84,6 +90,7 @@ To use the Recommendation service, follow these steps:
     <br />
     <div id="recommendation-message">
         {recommendedSize ? `Recommendation size: ${recommendedSize}` : ''}
+        {recommendedUPC ? `Recommendation Variation: ${recommendedUPC}` : ''}
     </div>
     ```
 
@@ -148,8 +155,11 @@ To include the sizey Recommendation Service script in your HTML file, use the fo
         try {
             const eventData = e.data;
             if (eventData.event === "sizey-recommendations" && eventData.recommendations.length > 0) {
-              sessionStorage.setItem('sizey-recommendation-size', eventData.recommendations[0].size);
-              updateRecommendationMessage();
+                sessionStorage.setItem('sizey-recommendation-size', eventData.recommendations[0].size);
+                if (eventData.eanCode){
+                    sessionStorage.setItem('sizey-recommendation-upc', eventData.eanCode)
+                }
+                updateRecommendationMessage();
             }
         }catch {
             console.error('Error processing recommendations:', error);
@@ -159,7 +169,10 @@ To include the sizey Recommendation Service script in your HTML file, use the fo
       const updateRecommendationMessage = () => {
         const recommendationMessage = document.getElementById('recommendation-message');
         if (sessionStorage.getItem('sizey-recommendation-size')) {
-          recommendationMessage.innerText = `Recommendation size: ${sessionStorage.getItem('sizey-recommendation-size')}`;
+            recommendationMessage.innerText = `Recommendation size: ${sessionStorage.getItem('sizey-recommendation-size')}`;
+            if(sessionStorage.getItem('sizey-recommendation-upc')) {
+                recommendationMessage.innerText = `Recommendation size: ${sessionStorage.getItem('sizey-recommendation-size')} & Recommendation variation: ${sessionStorage.getItem('sizey-recommendation-upc')}`;
+            }
         } else {
           recommendationMessage.innerText = '';
         }

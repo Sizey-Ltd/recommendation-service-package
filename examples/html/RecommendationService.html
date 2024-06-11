@@ -21,6 +21,9 @@
           if (eventData.event === "sizey-recommendations" && eventData.recommendations.length > 0) {
             // use size directly or save in sessionStorage and use anywhere
             sessionStorage.setItem('sizey-recommendation-size', eventData.recommendations[0].size);
+            if (eventData.eanCode){
+              sessionStorage.setItem('sizey-recommendation-upc', eventData.eanCode)
+            }
             updateRecommendationMessage();
           }
         }catch {
@@ -32,6 +35,9 @@
         const recommendationMessage = document.getElementById('recommendation-message');
         if (sessionStorage.getItem('sizey-recommendation-size')) {
           recommendationMessage.innerText = `Recommendation size: ${sessionStorage.getItem('sizey-recommendation-size')}`;
+          if(sessionStorage.getItem('sizey-recommendation-upc')) {
+            recommendationMessage.innerText = `Recommendation size: ${sessionStorage.getItem('sizey-recommendation-size')} & Recommendation variation: ${sessionStorage.getItem('sizey-recommendation-upc')}`;
+          }
         } else {
           recommendationMessage.innerText = '';
         }

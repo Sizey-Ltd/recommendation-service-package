@@ -6,6 +6,7 @@ import { sizeyRecommendation, sizeySync } from 'recommendation-service';
 function App() {
 
   const [recommendedSize, setRecommendedSize] = useState(sessionStorage.getItem('sizey-recommendation-size'));
+  const [recommendedUPC, setRecommendedUPC] = useState(sessionStorage.getItem('sizey-recommendation-upc'));
 
   useEffect(() => {
     sizeyRecommendation();
@@ -15,10 +16,15 @@ function App() {
         const eventData = e.data;
         if (eventData.event === "sizey-recommendations" && eventData.recommendations.length > 0) {
           const size = eventData.recommendations[0].size;
+          const recommendedVariationUPC = eventData.eanCode;
           // use size directly or save in sessionStorage and use anywhere
           if (size) {
             sessionStorage.setItem('sizey-recommendation-size', size);
             setRecommendedSize(sessionStorage.getItem('sizey-recommendation-size'));
+          }
+          if (recommendedVariationUPC) {
+            sessionStorage.setItem('sizey-recommendation-upc', recommendedVariationUPC);
+            setRecommendedUPC(sessionStorage.getItem('sizey-recommendation-upc'));
           }
         }
       } catch (error) {
@@ -54,6 +60,7 @@ function App() {
             <br />
             <div id="recommendation-message">
               {recommendedSize ? `Recommendation size: ${recommendedSize}` : ''}
+              {recommendedUPC ? `Recommendation Variation: ${recommendedUPC}` : ''}
             </div>
             <span 
               id="sizey-sync-container" 
