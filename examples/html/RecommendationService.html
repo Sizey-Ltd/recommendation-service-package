@@ -21,8 +21,8 @@
           if (eventData.event === "sizey-recommendations" && eventData.recommendations.length > 0) {
             // use size directly or save in sessionStorage and use anywhere
             sessionStorage.setItem('sizey-recommendation-size', eventData.recommendations[0].size);
-            if (eventData.eanCode){
-              sessionStorage.setItem('sizey-recommendation-upc', eventData.eanCode)
+            if (eventData.upc){
+              sessionStorage.setItem('sizey-recommendation-upc', eventData.upc)
             }
             updateRecommendationMessage();
           }

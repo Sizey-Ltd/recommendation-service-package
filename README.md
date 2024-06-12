@@ -48,13 +48,13 @@ To use the Recommendation service, follow these steps:
                 const eventData = e.data;
                 if (eventData.event === "sizey-recommendations" && eventData.recommendations.length > 0) {
                     const size = eventData.recommendations[0].size;
-                    const recommendedVariationUPC = eventData.eanCode;
+                    const upc = eventData.upc;
                     if (size) {
                         sessionStorage.setItem('sizey-recommendation-size', size);
                         setRecommendedSize(sessionStorage.getItem('sizey-recommendation-size'));
                     }
-                    if (recommendedVariationUPC) {
-                        sessionStorage.setItem('sizey-recommendation-upc', recommendedVariationUPC);
+                    if (upc) {
+                        sessionStorage.setItem('sizey-recommendation-upc', upc);
                         setRecommendedUPC(sessionStorage.getItem('sizey-recommendation-upc'));
                     }
                 }
@@ -156,8 +156,8 @@ To include the sizey Recommendation Service script in your HTML file, use the fo
             const eventData = e.data;
             if (eventData.event === "sizey-recommendations" && eventData.recommendations.length > 0) {
                 sessionStorage.setItem('sizey-recommendation-size', eventData.recommendations[0].size);
-                if (eventData.eanCode){
-                    sessionStorage.setItem('sizey-recommendation-upc', eventData.eanCode)
+                if (eventData.upc){
+                    sessionStorage.setItem('sizey-recommendation-upc', eventData.upc)
                 }
                 updateRecommendationMessage();
             }
