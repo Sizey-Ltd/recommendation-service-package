@@ -148,7 +148,7 @@ To include the sizey Recommendation Service script in your HTML file, use the fo
 
 ```html
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://rawcdn.githack.com/Sizey-Ltd/recommendation-service-package/9a66c46da0f2cf6edc78e2e214c645f35caca993/sizey-recommendation.min.js" type="module"></script>
+<script src="https://rawcdn.githack.com/Sizey-Ltd/recommendation-service-package/91dbbb4450b74357d2a8d6d9ddd4756114687403/sizey-recommendation.min.js" type="module"></script>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
       const handleMessage = (e) => {
